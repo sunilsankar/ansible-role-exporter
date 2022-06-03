@@ -1,0 +1,6 @@
+- name: "Install haproxy"
+  ansible.builtin.dnf:
+    name: haproxy
+    state: latest
+
+- name: "Configure haproxy"

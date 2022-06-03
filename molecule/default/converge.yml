@@ -1,6 +1,10 @@
 ---
 - name: Converge
   hosts: all
+  vars:
+    country: 'NL'
+    email_address: 'test@test.com'
+    organization_name: 'Test LTD' 
   tasks:
     - name: "Include ansible-role-exporter"
       include_role:

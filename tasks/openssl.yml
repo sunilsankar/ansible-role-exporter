@@ -1,0 +1,22 @@
+- name: "Generate Private Key"
+  openssl_privatekey:
+      path: "/etc/ssl/certs/{{ ansible_hostname }}.key"
+      size: 4096
+      type: DSA
+      backup: yes
+
+- name: "Generate Certificate Request with private key"
+  openssl_csr:
+        path: "/etc/ssl/certs/{{ ansible_hostname }}.crt"
+        privatekey_path: "/etc/ssl/certs/{{ ansible_hostname }}.key"
+        country: "{{ country }}"
+        organization_name: "{{ organization_name }}"
+        email_address: "{{ email_address }}"
+        common_name: "{{ ansible_hostname }}"
+
+- name: "Generating Self Signed Certificate"
+  openssl_certificate:
+        path: "/etc/ssl/certs/{{ ansible_hostname }}_cer"
+        privatekey_path: "/etc/ssl/certs/{{ ansible_hostname }}.key"
+        csr_path: "/etc/ssl/certs/{{ ansible_hostname }}.crt"
+        provider: selfsigned

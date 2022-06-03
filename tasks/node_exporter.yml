@@ -4,7 +4,15 @@
     name: node_exporter
     state: latest
 
-- name: "Start the node_Exporter"
+- name: "Running node_exporter only on localhost"
+  ansible.builtin.copy:
+    src: files/node_exporter
+    dest: /etc/default/node_exporter
+    mode: 0644
+  notify:
+     - "Restart node_exporter"
+
+- name: "Node Exporter service is started and enabled"
   ansible.builtin.systemd:
       name: node_exporter
       state: started

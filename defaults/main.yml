@@ -1,3 +1,6 @@
 ---
 # defaults file for ansible-role-exporter
 node_exporter_version: 1.3.1-1
+country: 'NL'
+email_address: 'test@test.com'
+organization_name: Test LTD

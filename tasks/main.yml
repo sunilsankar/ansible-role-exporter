@@ -5,3 +5,6 @@
 
 - name: "Deploying Node Exporter"
   include_tasks: node_exporter.yml
+
+- name: "Generating SelfSigned"
+  include_tasks: openssl.yml

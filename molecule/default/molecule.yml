@@ -20,8 +20,9 @@ platforms:
     pre_build_image: true
 provisioner:
   name: ansible
-  lint:
+  lint: 
     name: ansible-lint
+    enabled: True
   playbooks:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
 verifier:
