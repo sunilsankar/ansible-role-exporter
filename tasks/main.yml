@@ -1,0 +1,7 @@
+---
+# tasks file for ansible-role-exporter
+- name: "Installing the repo"
+  include_tasks: repository.yml
+
+- name: "Deploying Node Exporter"
+  include_tasks: node_exporter.yml

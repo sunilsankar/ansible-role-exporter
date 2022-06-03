@@ -1,0 +1,11 @@
+---
+- name: "Installing Node Exporter"
+  ansible.builtin.dnf:
+    name: node_exporter
+    state: latest
+
+- name: "Start the node_Exporter"
+  ansible.builtin.systemd:
+      name: node_exporter
+      state: started
+      enabled: yes
