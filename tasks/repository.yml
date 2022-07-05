@@ -9,4 +9,3 @@
          - https://packagecloud.io/prometheus-rpm/release/gpgkey
          - https://raw.githubusercontent.com/lest/prometheus-rpm/master/RPM-GPG-KEY-prometheus-rpm
      metadata_expire: 300
-

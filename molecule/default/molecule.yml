@@ -3,6 +3,10 @@ dependency:
   name: galaxy
 driver:
   name: podman
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
 platforms:
   - name: almalinux
     image: docker.io/sunilsankar/docker-almalinux
@@ -20,9 +24,6 @@ platforms:
     pre_build_image: true
 provisioner:
   name: ansible
-  lint: 
-    name: ansible-lint
-    enabled: True
   playbooks:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
 verifier:

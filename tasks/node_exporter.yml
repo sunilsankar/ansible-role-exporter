@@ -2,7 +2,7 @@
 - name: "Installing Node Exporter"
   ansible.builtin.dnf:
     name: node_exporter
-    state: latest
+    state: installed
 
 - name: "Running node_exporter only on localhost"
   ansible.builtin.copy:
